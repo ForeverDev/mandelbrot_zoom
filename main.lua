@@ -1,7 +1,7 @@
 local const = {
   iterations = 1000;
-  screen_width = love.window:getWidth();
-  screen_height = love.window:getHeight();
+  screen_width = love.graphics.getWidth();
+  screen_height = love.graphics.getHeight();
   colorscheme = {
     {66, 30, 15};     {25, 7, 26};
     {9, 1, 47};       {4, 4, 73};
@@ -88,7 +88,7 @@ function love.keypressed(k)
 end
 
 function love.mousepressed(x, y, b)
-  if b == "l" then
+  if b == 1 then
     mouse_down = true
     mouse_start_x = x
     mouse_start_y = y
@@ -96,7 +96,7 @@ function love.mousepressed(x, y, b)
 end
 
 function love.mousereleased(x, y, b)
-  if b == "l" then
+  if b == 1 then
     mouse_down = false
     local d = math.max(x - mouse_start_x, y - mouse_start_y)
     local tlx = tl.x
